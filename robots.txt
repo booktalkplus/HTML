@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://booktalkplus.github.io/HTML/sitemap.xml
