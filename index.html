@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>남과장의 중개업무 자동화 도구 모음</title>
+    <meta
+      name="description"
+      content="중개사님의 반복 업무를 줄여주는 네부스캐너, 전세낀 등 중개업무 자동화 도구 모음"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #0f172a;
+        --bg-soft: #020617;
+        --card: #020617;
+        --accent: #38bdf8;
+        --accent-soft: rgba(56, 189, 248, 0.12);
+        --border-subtle: rgba(148, 163, 184, 0.35);
+        --text: #e5e7eb;
+        --text-muted: #9ca3af;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        background: radial-gradient(circle at top, #111827 0, #020617 55%);
+        color: var(--text);
+      }
+      .page {
+        min-height: 100vh;
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 24px 16px 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+      .logo {
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .logo-badge {
+        width: 24px;
+        height: 24px;
+        border-radius: 999px;
+        background: radial-gradient(circle at 30% 20%, #38bdf8, #0ea5e9 60%);
+        box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.3),
+          0 10px 30px rgba(8, 47, 73, 0.9);
+      }
+      .nav-actions {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      a.btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        font-size: 13px;
+        text-decoration: none;
+        border: 1px solid rgba(148, 163, 184, 0.4);
+        color: var(--text);
+        background: rgba(15, 23, 42, 0.8);
+        backdrop-filter: blur(12px);
+        transition: all 0.18s ease-out;
+      }
+      a.btn-primary {
+        border-color: transparent;
+        background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+        color: #0b1120;
+        font-weight: 600;
+      }
+      a.btn:hover {
+        transform: translateY(-1px);
+        border-color: rgba(148, 163, 184, 0.9);
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.9);
+      }
+      a.btn-primary:hover {
+        box-shadow: 0 10px 35px rgba(8, 47, 73, 0.9);
+      }
+      main {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+        gap: 24px;
+        padding: 20px;
+        border-radius: 20px;
+        background: radial-gradient(circle at top left, #1f2937, #020617);
+        border: 1px solid rgba(148, 163, 184, 0.35);
+      }
+      .hero-title {
+        font-size: clamp(24px, 3vw, 30px);
+        font-weight: 750;
+        margin-bottom: 8px;
+      }
+      .hero-sub {
+        font-size: 14px;
+        color: var(--text-muted);
+        line-height: 1.6;
+        margin-bottom: 16px;
+      }
+      .hero-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+      .tag {
+        font-size: 11px;
+        padding: 4px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(148, 163, 184, 0.5);
+        color: var(--text-muted);
+        background: rgba(15, 23, 42, 0.7);
+      }
+      .hero-metric {
+        font-size: 12px;
+        color: var(--text-muted);
+      }
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+      .card {
+        border-radius: 16px;
+        padding: 16px;
+        background: radial-gradient(circle at top, #020617, #020617);
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .card-kicker {
+        font-size: 11px;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .card-title {
+        font-size: 16px;
+        font-weight: 600;
+      }
+      .card-desc {
+        font-size: 13px;
+        color: var(--text-muted);
+      }
+      .card-footer {
+        margin-top: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        font-size: 11px;
+        color: var(--text-muted);
+      }
+      .pill {
+        padding: 3px 8px;
+        border-radius: 999px;
+        border: 1px solid rgba(148, 163, 184, 0.3);
+      }
+      .section-title-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+      }
+      .section-title {
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .section-caption {
+        font-size: 12px;
+        color: var(--text-muted);
+      }
+      .roadmap-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+      .roadmap-card {
+        border-radius: 14px;
+        padding: 10px 12px;
+        background: radial-gradient(circle at top, #020617, #020617);
+        border: 1px dashed rgba(148, 163, 184, 0.4);
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .roadmap-kicker {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--text-muted);
+      }
+      .roadmap-title {
+        font-size: 13px;
+        font-weight: 500;
+      }
+      .roadmap-desc {
+        font-size: 11px;
+        color: var(--text-muted);
+      }
+      .faq-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+      .faq-item {
+        padding: 10px 12px;
+        border-radius: 12px;
+        border: 1px solid rgba(148, 163, 184, 0.25);
+        background: rgba(15, 23, 42, 0.7);
+        font-size: 12px;
+      }
+      .faq-q {
+        font-weight: 500;
+        margin-bottom: 4px;
+      }
+      footer {
+        margin-top: auto;
+        padding-top: 16px;
+        border-top: 1px solid rgba(30, 64, 175, 0.8);
+        font-size: 11px;
+        color: var(--text-muted);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      footer .footer-links {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      footer a {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 11px;
+      }
+      footer a:hover {
+        color: var(--accent);
+      }
+      @media (max-width: 768px) {
+        .page {
+          padding: 16px 12px 32px;
+        }
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .hero {
+          grid-template-columns: minmax(0, 1fr);
+        }
+        .cards-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+        .roadmap-grid,
+        .faq-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+        footer {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <div class="logo">
+          <div class="logo-badge" aria-hidden="true"></div>
+          <span>남과장의 자동화 실험실</span>
+        </div>
+        <div class="nav-actions">
+          <a
+            class="btn"
+            href="https://www.youtube.com/channel/UC-hmhpzXhurEufM4izBzgUA/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>YouTube 채널</span>
+          </a>
+          <a
+            class="btn btn-primary"
+            href="https://open.kakao.com/o/gJzfCdfi"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>오픈톡 참여하기</span>
+          </a>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div>
+            <div class="hero-title">남과장의 중개업무 자동화 도구 모음</div>
+            <p class="hero-sub">
+              공인중개사님의 반복 업무를 줄여주는 작은 도구들을 차곡차곡
+              모으는 실험실입니다. 지금은 2개부터 시작하지만, 현장에서
+              정말 쓰이는 도구만 느리게, 꾸준히 추가합니다.
+            </p>
+            <div class="hero-tags">
+              <span class="tag">네부스캐너 · 매물 등록 보조</span>
+              <span class="tag">전세낀 · 단지 내 키워드 검색</span>
+              <span class="tag">순돌이 프로젝트 · Coming soon</span>
+            </div>
+            <p class="hero-metric">
+              현업 중개사님의 피드백을 바탕으로 개선 중 · 문의는 언제든
+              오픈톡으로 남겨 주세요.
+            </p>
+          </div>
+          <div>
+            <div class="cards-grid">
+              <article class="card">
+                <div class="card-kicker">도구 01</div>
+                <h2 class="card-title">네부스캐너</h2>
+                <p class="card-desc">
+                  네이버 부동산 페이지에서 경쟁 매물을 자동으로 수집·분석해
+                  주는, 중개사님의 매물 등록 보조 도구입니다.
+                </p>
+                <div class="card-footer">
+                  <span class="pill">매물 등록 보조</span>
+                  <a class="btn" href="./projects/nebu-scanner.html">
+                    자세히 보기
+                  </a>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card-kicker">도구 02</div>
+                <h2 class="card-title">전세낀</h2>
+                <p class="card-desc">
+                  아파트 단지 내에서 특정 키워드를 포함한 매물을 한 번에 찾아,
+                  ‘전세 끼고 매수’ 등 특수 조건 매물을 빠르게 찾을 수 있도록
+                  도와줍니다.
+                </p>
+                <div class="card-footer">
+                  <span class="pill">단지 내 키워드 검색</span>
+                  <a class="btn" href="./projects/junse-apt.html">
+                    자세히 보기
+                  </a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-title-row">
+            <div class="section-title">곧 추가될 자동화 도구들</div>
+            <div class="section-caption">
+              아이디어 단계의 도구들도 미리 공유해 두고, 오픈톡 피드백을 받아
+              우선순위를 정합니다.
+            </div>
+          </div>
+          <div class="roadmap-grid">
+            <article class="roadmap-card">
+              <div class="roadmap-kicker">순돌이 프로젝트</div>
+              <div class="roadmap-title">
+                매물 광고 노출 순위 모니터링 도구
+              </div>
+              <p class="roadmap-desc">
+                중개사님이 등록한 매물들이 실제 검색 결과에서 몇 번째에
+                노출되는지 한눈에 보여 주는 도구입니다.
+              </p>
+            </article>
+            <article class="roadmap-card">
+              <div class="roadmap-kicker">Coming soon</div>
+              <div class="roadmap-title">채널별 성과 리포트 자동화</div>
+              <p class="roadmap-desc">
+                유튜브·카카오톡·직접 유입 등 채널별로 어떤 도구가 얼마나
+                설치·사용되는지 GA 데이터를 기반으로 요약합니다.
+              </p>
+            </article>
+            <article class="roadmap-card">
+              <div class="roadmap-kicker">Idea</div>
+              <div class="roadmap-title">현장 피드백 기반 신규 도구</div>
+              <p class="roadmap-desc">
+                “이 업무도 자동화되면 좋겠다” 싶은 아이디어가 있다면 오픈톡에
+                남겨 주세요. 실제 도구로 구현을 검토합니다.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-title-row">
+            <div class="section-title">자주 받는 질문</div>
+            <div class="section-caption">
+              자세한 이야기는 유튜브 영상과 오픈톡에서 계속 업데이트됩니다.
+            </div>
+          </div>
+          <div class="faq-grid">
+            <article class="faq-item">
+              <div class="faq-q">정말 무료로 쓸 수 있나요?</div>
+              <p>
+                네. 현재 공개된 도구들은 모두 무료로 제공됩니다. 다만 실험
+                단계라, 기능은 수시로 개선·변경될 수 있습니다.
+              </p>
+            </article>
+            <article class="faq-item">
+              <div class="faq-q">설치나 사용 방법이 어렵습니다.</div>
+              <p>
+                유튜브 채널에 설치·사용 방법을 차근차근 설명한 영상을
+                올려두고 있습니다. 그래도 어려우시면 오픈톡으로 문의 주세요.
+              </p>
+            </article>
+            <article class="faq-item">
+              <div class="faq-q">버그나 개선 아이디어는 어디로 보내나요?</div>
+              <p>
+                오픈톡 방에 스크린샷과 함께 편하게 남겨 주세요. 현업에서
+                실제로 불편한 지점을 우선해서 개선하고 있습니다.
+              </p>
+            </article>
+            <article class="faq-item">
+              <div class="faq-q">앞으로 어떤 도구들이 더 추가되나요?</div>
+              <p>
+                순돌이 프로젝트(광고 노출 순위 모니터링)를 시작으로, 중개사님이
+                반복적으로 하는 ‘손이 많이 가는 일’ 위주로 천천히 확장할
+                예정입니다.
+              </p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <span>© 남과장의 중개업무 자동화 도구 모음</span>
+        <div class="footer-links">
+          <a
+            href="https://www.youtube.com/channel/UC-hmhpzXhurEufM4izBzgUA/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >YouTube 채널</a
+          >
+          <a
+            href="https://open.kakao.com/o/gJzfCdfi"
+            target="_blank"
+            rel="noopener noreferrer"
+            >오픈톡 바로가기</a
+          >
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+
