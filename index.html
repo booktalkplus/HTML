@@ -150,6 +150,17 @@
         font-size: 16px;
         font-weight: 600;
       }
+      .card-title-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .card-logo {
+        width: 24px;
+        height: 24px;
+        border-radius: 6px;
+        flex-shrink: 0;
+      }
       .card-desc {
         font-size: 13px;
         color: var(--text-muted);
@@ -259,7 +270,14 @@
             <div class="cards-grid">
               <article class="card">
                 <div class="card-kicker">도구 01</div>
-                <h2 class="card-title">네부스캐너</h2>
+                <div class="card-title-row">
+                  <img
+                    class="card-logo"
+                    src="../02_nebu_scanner/chrome-extension/icons/icon48.png"
+                    alt="네부스캐너 로고"
+                  />
+                  <h2 class="card-title">네부스캐너</h2>
+                </div>
                 <p class="card-desc">
                   네이버 부동산 페이지에서 경쟁 매물을 자동으로 수집·분석해
                   주는, 중개사님의 매물 등록 보조 도구입니다.
