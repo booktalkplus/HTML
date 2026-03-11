@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>네부스캐너 – 중개사 매물 등록 보조 도구</title>
+    <meta
+      name="description"
+      content="네이버 부동산 경쟁 매물을 자동 분석해 중개사님의 매물 등록을 도와주는 크롬 확장 도구, 네부스캐너 소개 페이지."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #020617;
+        --card: #020617;
+        --accent: #38bdf8;
+        --text: #e5e7eb;
+        --text-muted: #9ca3af;
+        --border-subtle: rgba(148, 163, 184, 0.35);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        background: radial-gradient(circle at top, #111827 0, #020617 55%);
+        color: var(--text);
+      }
+      .page {
+        min-height: 100vh;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 24px 16px 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      a {
+        color: #38bdf8;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .back-link {
+        font-size: 13px;
+        color: var(--text-muted);
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .title-block {
+        margin-top: 4px;
+      }
+      h1 {
+        font-size: clamp(22px, 3vw, 26px);
+        margin: 0 0 4px 0;
+      }
+      .subtitle {
+        font-size: 14px;
+        color: var(--text-muted);
+      }
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+      }
+      .pill {
+        font-size: 11px;
+        padding: 4px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--border-subtle);
+        color: var(--text-muted);
+      }
+      main {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      section {
+        border-radius: 16px;
+        padding: 14px 16px;
+        background: rgba(15, 23, 42, 0.85);
+        border: 1px solid var(--border-subtle);
+      }
+      section h2 {
+        font-size: 16px;
+        margin: 0 0 6px 0;
+      }
+      section p,
+      section li {
+        font-size: 13px;
+        line-height: 1.7;
+        color: var(--text-muted);
+      }
+      ul {
+        padding-left: 18px;
+        margin: 6px 0 0 0;
+      }
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(148, 163, 184, 0.5);
+        font-size: 13px;
+        text-decoration: none;
+        color: var(--text);
+        background: rgba(15, 23, 42, 0.9);
+        transition: all 0.16s ease-out;
+      }
+      .btn-primary {
+        border-color: transparent;
+        background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+        color: #0b1120;
+        font-weight: 600;
+      }
+      .btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.9);
+        text-decoration: none;
+      }
+      footer {
+        margin-top: auto;
+        padding-top: 16px;
+        border-top: 1px solid rgba(30, 64, 175, 0.8);
+        font-size: 11px;
+        color: var(--text-muted);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+      }
+      footer .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      @media (max-width: 640px) {
+        .page {
+          padding: 18px 12px 28px;
+        }
+        section {
+          padding: 12px 12px;
+        }
+        footer {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <a class="back-link" href="../index.html">
+          <span aria-hidden="true">←</span>
+          <span>프로젝트 목록으로 돌아가기</span>
+        </a>
+      </header>
+
+      <div class="title-block">
+        <h1>네부스캐너</h1>
+        <p class="subtitle">중개사님의 매물 등록을 도와주는 네이버 부동산 분석 도구</p>
+        <div class="pill-row">
+          <span class="pill">매물 등록 보조</span>
+          <span class="pill">네이버 부동산</span>
+          <span class="pill">크롬 확장 프로그램</span>
+        </div>
+      </div>
+
+      <main>
+        <section>
+          <h2>이 페이지는 아직 뼈대 단계입니다.</h2>
+          <p>
+            네부스캐너가 어떤 문제를 해결하고, 중개사님의 어떤 시간을 아껴 주는지에 대한
+            상세 설명은 추후 단계에서 채워질 예정입니다. 우선은 프로젝트 구조만 잡아 두고,
+            검색 엔진이 이 페이지를 인식할 수 있도록 기본 정보만 구성해 두었습니다.
+          </p>
+        </section>
+
+        <section>
+          <h2>기본 정보</h2>
+          <ul>
+            <li>도구 이름: 네부스캐너 (Nebu Scanner)</li>
+            <li>용도: 중개사님의 매물 등록을 위한 경쟁 매물 분석 보조</li>
+            <li>플랫폼: 크롬 확장 프로그램</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>관련 링크</h2>
+          <p>네부스캐너 설치 및 사용 방법, 개선 안내는 아래 채널에서 계속 업데이트됩니다.</p>
+          <div class="cta-row">
+            <a
+              class="btn"
+              href="https://www.youtube.com/channel/UC-hmhpzXhurEufM4izBzgUA/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              YouTube 채널 보기
+            </a>
+            <a
+              class="btn btn-primary"
+              href="https://open.kakao.com/o/gJzfCdfi"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              오픈톡에서 문의하기
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <span>© 남과장의 중개업무 자동화 도구 모음</span>
+        <div class="links">
+          <a
+            href="https://www.youtube.com/channel/UC-hmhpzXhurEufM4izBzgUA/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >YouTube</a
+          >
+          <a
+            href="https://open.kakao.com/o/gJzfCdfi"
+            target="_blank"
+            rel="noopener noreferrer"
+            >오픈톡</a
+          >
+          <a href="../index.html">프로젝트 목록</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+
