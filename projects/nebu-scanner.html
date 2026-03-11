@@ -2,10 +2,10 @@
 <html lang="ko">
   <head>
     <meta charset="utf-8" />
-    <title>네부스캐너 – 중개사 매물 등록 보조 도구</title>
+    <title>네부스캐너 – 공인중개사 매물 광고 문구 자동 수집 크롬 확장</title>
     <meta
       name="description"
-      content="네이버 부동산 경쟁 매물을 자동 분석해 중개사님의 매물 등록을 도와주는 크롬 확장 도구, 네부스캐너 소개 페이지."
+      content="네이버 부동산 경쟁 매물의 한줄 특징·상세 설명을 클릭 한 번에 CSV로 수집. 공인중개사의 매물 광고 문구 작성 시간을 줄여주는 크롬 확장 프로그램, 네부스캐너."
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
@@ -189,52 +189,76 @@
           alt="네부스캐너 로고"
         />
         <h1>네부스캐너</h1>
-        <p class="subtitle">중개사님의 매물 등록을 도와주는 네이버 부동산 분석 도구</p>
+        <p class="subtitle">경쟁 매물 광고 문구를 클릭 한 번에 수집해 AI 분석까지 연결하는 크롬 확장</p>
         <div class="pill-row">
-          <span class="pill">매물 등록 보조</span>
+          <span class="pill">공인중개사 전용</span>
           <span class="pill">네이버 부동산</span>
           <span class="pill">크롬 확장 프로그램</span>
+          <span class="pill">CSV 내보내기</span>
+          <span class="pill">AI 연동</span>
         </div>
       </div>
 
       <main>
-        <section>
-          <h2>이 페이지는 아직 뼈대 단계입니다.</h2>
+        <section id="intro">
+          <h2>매물 광고 문구, 매번 직접 찾아서 복사하고 계신가요?</h2>
           <p>
-            네부스캐너가 어떤 문제를 해결하고, 중개사님의 어떤 시간을 아껴 주는지에 대한
-            상세 설명은 추후 단계에서 채워질 예정입니다. 우선은 프로젝트 구조만 잡아 두고,
-            검색 엔진이 이 페이지를 인식할 수 있도록 기본 정보만 구성해 두었습니다.
+            네이버 부동산에서 매물을 광고할 때, 가격·면적 같은 기본 정보는 경쟁 매물과 동일합니다.
+            손님이 중개사를 선택하는 기준은 결국 <strong>한줄 특징과 상세 설명</strong>입니다.
+          </p>
+          <p>
+            좋은 문구를 쓰려면 경쟁 매물을 하나씩 열어 내용을 복사해야 하는데, 이 수작업이 은근히 시간을 잡아먹습니다.
+            네부스캐너는 이 과정을 자동화합니다. 경쟁 매물의 광고 문구를 <strong>클릭 한 번에 CSV 파일로 수집</strong>하고,
+            별도 제공되는 AI 도구에 파일을 넘기면 나만의 경쟁력 있는 문구 작성까지 이어집니다.
           </p>
         </section>
 
-        <section>
-          <h2>기본 정보</h2>
+        <section id="features">
+          <h2>주요 기능</h2>
           <ul>
-            <li>도구 이름: 네부스캐너 (Nebu Scanner)</li>
-            <li>용도: 중개사님의 매물 등록을 위한 경쟁 매물 분석 보조</li>
-            <li>플랫폼: 크롬 확장 프로그램</li>
+            <li>네이버 부동산에서 매물 클릭 한 번으로 동일 조건 경쟁 매물 자동 탐색</li>
+            <li>각 경쟁 매물의 <strong>한줄 특징·상세 설명</strong> 일괄 수집</li>
+            <li>수집 결과를 <strong>CSV 파일</strong>로 즉시 내보내기</li>
+            <li>가격 오차 범위·면적 오차 범위 옵션으로 경쟁 매물 범위 조정 가능</li>
+            <li>수집된 CSV를 <strong>Gemini AI 도구</strong>에 연결해 광고 문구 자동 생성</li>
           </ul>
         </section>
 
-        <section>
-          <h2>관련 링크</h2>
-          <p>네부스캐너 설치 및 사용 방법, 개선 안내는 아래 채널에서 계속 업데이트됩니다.</p>
+        <section id="links">
+          <h2>설치 및 AI 도구 연결</h2>
+          <p>크롬 웹스토어에서 바로 설치하고, 수집한 CSV를 Gemini Gem에 올리면 문구 작성까지 한 번에 완료됩니다.</p>
           <div class="cta-row">
+            <a
+              class="btn btn-primary"
+              href="https://chrome.google.com/webstore/detail/mckmkggdmdidejlmpgfkhakjilapkggd?utm_source=website&utm_medium=web&utm_campaign=nebu_scanner&utm_content=intro_page"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              크롬 웹스토어에서 설치
+            </a>
+            <a
+              class="btn"
+              href="https://gemini.google.com/gem/1GgkNjvMCwM3TTZcho-8GkSOJVhZlhJY4?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Gemini AI 도구 열기
+            </a>
             <a
               class="btn"
               href="https://www.youtube.com/channel/UC-hmhpzXhurEufM4izBzgUA/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              YouTube 채널 보기
+              YouTube 사용법 보기
             </a>
             <a
-              class="btn btn-primary"
+              class="btn"
               href="https://open.kakao.com/o/gJzfCdfi"
               target="_blank"
               rel="noopener noreferrer"
             >
-              오픈톡에서 문의하기
+              오픈톡 문의
             </a>
           </div>
         </section>
