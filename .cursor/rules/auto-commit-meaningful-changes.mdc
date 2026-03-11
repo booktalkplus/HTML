@@ -1,0 +1,22 @@
+---
+description: Auto-commit meaningful code changes
+alwaysApply: true
+---
+
+# Automatic Commit Rule
+
+- When a task includes meaningful code changes, create a git commit automatically without asking again.
+- A "meaningful change" includes at least one of:
+  - feature addition or behavior change
+  - bug fix
+  - refactor that changes implementation structure
+  - non-trivial styling/layout update
+- Do not commit when:
+  - no files changed
+  - changes are temporary/debug-only
+  - changes include likely secrets or credentials
+- Before committing:
+  - run `git status` and review changed files
+  - write a concise commit message reflecting intent and reason
+- After committing:
+  - run `git status` and report commit result
