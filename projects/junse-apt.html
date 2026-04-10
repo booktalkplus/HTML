@@ -74,6 +74,20 @@
       .title-block {
         margin-top: 4px;
       }
+      .title-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .title-row h1 {
+        flex: 1 1 200px;
+        margin: 0 0 4px 0;
+      }
+      .title-row .btn {
+        flex-shrink: 0;
+      }
       .logo {
         width: 48px;
         height: 48px;
@@ -82,7 +96,6 @@
       }
       h1 {
         font-size: clamp(22px, 3vw, 26px);
-        margin: 0 0 4px 0;
       }
       .subtitle {
         font-size: 14px;
@@ -125,12 +138,6 @@
       ul {
         padding-left: 18px;
         margin: 6px 0 0 0;
-      }
-      .cta-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-top: 10px;
       }
       .btn {
         display: inline-flex;
@@ -202,7 +209,17 @@
           src="../assets/icons/junse-apt/icon48.png"
           alt="전세낀 급매물 찾기 로고"
         />
-        <h1>전세낀 급매물 찾기</h1>
+        <div class="title-row">
+          <h1>전세낀 급매물 찾기</h1>
+          <a
+            class="btn btn-primary"
+            href="https://chromewebstore.google.com/detail/dgikpenbfmbopphifcdhdjmakgmmcafo?utm_source=website&utm_medium=web&utm_campaign=jeonsekin&utm_content=intro_page"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            크롬 웹스토어에서 설치
+          </a>
+        </div>
         <p class="subtitle">전세낀·급매물을 클릭 한번으로 전수 조사하여 파일로 저장하는 크롬 확장</p>
         <div class="pill-row">
           <span class="pill">단지 내 키워드 검색</span>
@@ -236,47 +253,17 @@
             <li>매물별 <strong>네이버 부동산 링크</strong> 제공으로 중개사 문의 간편</li>
           </ul>
         </section>
-
-        <section id="links">
-          <h2>설치 및 문의</h2>
-          <p>크롬 웹스토어에서 바로 설치하고, 사용법은 영상에서 확인하세요.</p>
-          <div class="cta-row">
-            <a
-              class="btn btn-primary"
-              href="https://chromewebstore.google.com/detail/dgikpenbfmbopphifcdhdjmakgmmcafo?utm_source=website&utm_medium=web&utm_campaign=jeonsekin&utm_content=intro_page"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              크롬 웹스토어에서 설치
-            </a>
-            <a
-              class="btn"
-              href="https://youtu.be/pgdlyF0OHuo"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              YouTube 사용법 보기
-            </a>
-          </div>
-        </section>
       </main>
 
       <footer>
         <span>© 남과장의 중개업무 자동화 도구 모음</span>
         <div class="links">
           <a
-            href="https://youtu.be/pgdlyF0OHuo"
-            target="_blank"
-            rel="noopener noreferrer"
-            >YouTube</a
-          >
-          <a
             href="https://forms.gle/o6qPdMYNJ1Ljowuq5"
             target="_blank"
             rel="noopener noreferrer"
             >버그 제보 및 문의</a
           >
-          <a href="../index.html">프로젝트 목록</a>
         </div>
       </footer>
     </div>

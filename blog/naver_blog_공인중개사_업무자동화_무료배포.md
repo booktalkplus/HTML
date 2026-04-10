@@ -52,7 +52,6 @@
 ### 설치 링크
 
 - **크롬 웹스토어 설치:** https://chrome.google.com/webstore/detail/mckmkggdmdidejlmpgfkhakjilapkggd
-- **YouTube 사용법:** https://youtu.be/6P9_bvABlfI
 - **Gemini AI 도구:** https://gemini.google.com/gem/1GgkNjvMCwM3TTZcho-8GkSOJVhZlhJY4?usp=sharing
 - **오픈톡 문의:** https://open.kakao.com/o/gJzfCdfi
 
@@ -91,7 +90,6 @@
 ### 설치 링크
 
 - **크롬 웹스토어 설치:** https://chromewebstore.google.com/detail/dgikpenbfmbopphifcdhdjmakgmmcafo
-- **YouTube 사용법:** https://youtu.be/ywCM9QcYZ3s
 - **오픈톡 문의:** https://open.kakao.com/o/gPESaJgi
 
 ---
@@ -115,7 +113,7 @@
 A. 네, 크롬 웹스토어에서 완전 무료로 설치할 수 있습니다. 별도 회원가입이나 결제 없이 바로 사용 가능합니다.
 
 **Q. 컴퓨터 사용에 익숙하지 않아도 쓸 수 있나요?**  
-A. 크롬 브라우저와 네이버 부동산 사용이 가능하다면 충분합니다. YouTube 사용법 영상이 제공되니 영상을 따라하시면 됩니다.
+A. 크롬 브라우저와 네이버 부동산 사용이 가능하다면 충분합니다. 크롬 웹스토어 설명과 각 도구 안내를 참고해 사용하시면 됩니다.
 
 **Q. 네이버 부동산 계정이 필요한가요?**  
 A. 네이버 부동산 일반 접속 환경에서 동작하므로, 별도의 특수 계정 없이 사용 가능합니다.
@@ -137,7 +135,6 @@ A. 각 도구의 카카오 오픈톡 채널에서 문의하시면 됩니다. 현
 
 현직 중개사님들의 피드백을 받아 계속 개선 중이며, 추가 도구(순돌이 프로젝트 등)도 순차 공개 예정입니다.
 
-- **YouTube 채널:** https://www.youtube.com/channel/UC-hmhpzXhurEufM4izBzgUA/
 - **오픈톡 커뮤니티:** https://open.kakao.com/o/gJzfCdfi
 - **공식 페이지:** https://booktalkplus.github.io/HTML/
 
